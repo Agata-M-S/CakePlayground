@@ -31,5 +31,6 @@ class Book_record extends Entity
         'quantity_in_stock' => true,
         'release_date' => true,
         'is_fiction' => true,
+        'author_id' => true
     ];
 }
