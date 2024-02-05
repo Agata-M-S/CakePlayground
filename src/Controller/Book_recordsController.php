@@ -16,22 +16,26 @@ class Book_recordsController extends AppController
 public function index()
 {
     $this->set('title', 'Book_records');
-    $book_records = $this->Book_records->find()->contain(['Authors', 'Genres'])->toArray();
+    $book_records = $this->Book_records
+    ->find()
+    ->contain(['Authors', 'Genres'])->toArray();
     $this->set(compact('book_records'));
   }
-
+// this method is for viewing the single book details in a separate view
 public function view($title = null)
 {
-  $book_record = $this->Book_records->findByTitle($title)->contain(['Authors', 'Genres'])->firstOrFail();
+  $book_record = $this->Book_records
+  ->findByTitle($title)
+  ->contain(['Authors', 'Genres', 'Reviews', 'Reviews.Users' ])
+  ->firstOrFail();
   $this->set(compact('book_record'));
 }
+// this method is for viewing the author's details in a separate view
 public function author($name = null){
-  $author = $this->Authors-> findByAuthorName($name)->firstOrFail();
+  $author = $this->Authors
+  ->findByAuthorName($name)
+  ->firstOrFail();
   $this->set(compact('author'));
-//   $query = $this->Authors->findByAuthorId(10);
-// $author = $query->firstOrFail();
-// // Log the SQL query
-// $this->log($query->sql(), 'debug');
 }
 }
 ?>
