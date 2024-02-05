@@ -14,6 +14,9 @@
 </span>
 <?php endforeach ?>
 </p>
+Book description:
+ <p> <?=$book_record->description ?>
+</p>
 <h5>
   Book reviews:
 </h5>
