@@ -38,6 +38,11 @@ class BookRecordsTable extends Table
           'foreignKey' => 'book_id',
           'targetForeignKey' => 'genre_id' 
         ]);
+        $this->belongsToMany('Reviews', [
+          'through' => 'BookReviews',
+          'foreignKey' => 'book_id',
+          'targetForeignKey' => 'review_id' 
+        ]);
       }
 
     /**
