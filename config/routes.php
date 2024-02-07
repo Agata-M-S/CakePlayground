@@ -47,6 +47,9 @@ Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/', function (RouteBuilder $routes) {
   $routes->connect('/book-records/:action/*', ['controller' => 'Book_records']);
+  $routes->connect('/book-records/edit/:title', ['controller' => 'Book_records', 'action' => 'edit'],
+  ['pass' => ['title']]);
+
     // Register scoped middleware for in scopes.
     $routes->registerMiddleware('csrf', new CsrfProtectionMiddleware([
         'httpOnly' => true,

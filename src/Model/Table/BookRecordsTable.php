@@ -79,6 +79,12 @@ class BookRecordsTable extends Table
             ->boolean('is_fiction')
             ->allowEmptyString('is_fiction');
 
+        $validator
+            ->scalar('description')
+            ->maxLength('description', 1000)
+            ->requirePresence('description', 'create')
+            ->notEmptyString('description');
+
         return $validator;
     }
 }
