@@ -7,6 +7,7 @@
   Written by: 
   <?= $this->Html -> link($book_record->author->author_name, ['action'=> 'author', $book_record -> author -> author_name]) ?>
 </p>
+<div><img src='<?= h($book_record->image) ?>' /> </div>
 <p>genres: 
   <?php foreach ($book_record->genres as $genre) : ?>
 <span>
@@ -15,7 +16,7 @@
 <?php endforeach ?>
 </p>
 Book description:
- <p> <?=$book_record->description ?>
+<p> <?=$book_record->description ?>
 </p>
 <h5>
   Book reviews:
@@ -42,5 +43,5 @@ Book description:
 <?php endforeach ?>
 </ul>
 <p>
-  <?= $this->Html->link('Edit', ['action' => 'edit', $book_record->id]) ?>
+  <?= $this->Html->link('Edit', ['controller' => 'Book_records','action' => 'edit', $book_record->title]) ?>
 </p>

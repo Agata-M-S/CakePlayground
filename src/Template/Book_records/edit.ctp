@@ -12,7 +12,7 @@
 <label for='price'>Book price:</label>
 <input id='price' type='text' name='price_in_pence' value= '<?= h($book_record->price_in_pence) ?>'>
 
-<!-- <label for='description'>Book image:</label>
-<input id='image' type='url'> -->
+<label for='description'>Book image:</label>
+<input id='image' type='url' name='image'>
 <button type='submit'>Edit</button>
 </form>
