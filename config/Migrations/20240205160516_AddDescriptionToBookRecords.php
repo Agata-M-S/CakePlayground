@@ -20,4 +20,11 @@ class AddDescriptionToBookRecords extends AbstractMigration
       ]);
       $table-> update();
     }
+
+    public function down() 
+    {
+      $table = $this->table('book_records');
+      $table-> dropColumn('description');
+      $table-> update();
+    }
 }
