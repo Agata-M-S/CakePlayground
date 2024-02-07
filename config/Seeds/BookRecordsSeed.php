@@ -27,6 +27,7 @@ class BookRecordsSeed extends AbstractSeed
                 'release_date' => '1815-12-23',
                 'is_fiction' => true,
                 'author_id' => 12,
+                'description' => 'Emma, fourth novel by Jane Austen, published in three volumes in 1815. Set in Highbury, England, in the early 19th century, the novel centres on Emma Woodhouse, a precocious young woman whose misplaced confidence in her matchmaking abilities occasions several romantic misadventures.'
             ],
             [
                 'book_id' => 3,
@@ -36,6 +37,7 @@ class BookRecordsSeed extends AbstractSeed
                 'release_date' => '1902-10-01',
                 'is_fiction' => true,
                 'author_id' => 6,
+                'description' => 'The Tale of Peter Rabbit is a children\'s book written and illustrated by Beatrix Potter that follows mischievous and disobedient young Peter Rabbit as he gets into, and is chased around, the garden of Mr. McGregor. He escapes and returns home to his mother, who puts him to bed after offering him chamomile tea.'
             ],
             [
                 'book_id' => 5,
@@ -45,6 +47,7 @@ class BookRecordsSeed extends AbstractSeed
                 'release_date' => '1949-06-08',
                 'is_fiction' => true,
                 'author_id' => 11,
+                'description' => 'The book is set in 1984 in Oceania, one of three perpetually warring totalitarian states (the other two are Eurasia and Eastasia). Oceania is governed by the all-controlling Party, which has brainwashed the population into unthinking obedience to its leader, Big Brother.'
             ],
             [
                 'book_id' => 6,
@@ -54,6 +57,7 @@ class BookRecordsSeed extends AbstractSeed
                 'release_date' => '1985-08-01',
                 'is_fiction' => true,
                 'author_id' => 13,
+                'description' => 'The Handmaid\'s Tale (1985) by Margaret Atwood is a dystopian novel set in a version of the United States that has been overthrown by religious fundamentalists. In what was once most likely Massachusetts, under the militaristic regime of the Republic of Gilead, women no longer have civil rights or autonomy.'
             ],
             [
                 'book_id' => 7,
@@ -63,6 +67,7 @@ class BookRecordsSeed extends AbstractSeed
                 'release_date' => '1897-04-01',
                 'is_fiction' => true,
                 'author_id' => 10,
+                'description' => 'The seminal masterpiece of alien invasion, The War of the Worlds (1898) conjures a terrifying, tentacled race of Martians who devastate the Earth and feed on their human victims while their voracious vegetation, the red weed, spreads over the ruined planet.'
             ],
             [
                 'book_id' => 10,
@@ -72,6 +77,7 @@ class BookRecordsSeed extends AbstractSeed
                 'release_date' => '1813-01-28',
                 'is_fiction' => true,
                 'author_id' => 12,
+                'description' => 'Pride and Prejudice follows the turbulent relationship between Elizabeth Bennet, the daughter of a country gentleman, and Fitzwilliam Darcy, a rich aristocratic landowner. They must overcome the titular sins of pride and prejudice in order to fall in love and marry.'
             ],
         ];
 
