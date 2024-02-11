@@ -74,23 +74,41 @@ public function addBook(){
   $book_record=$this->Book_records->newEntity();
   $author=$this-> Authors -> newEntity();
 
-  
-  if ($this->request->is('post')) {
+
+  //check if author exists before creating new record, extract its ID to use it instead of creating a new record
+
+  $authorName = $this->request->getData('author_name');
+  $authorExists = $this->Authors->find()
+  ->select(['author_id'])
+  ->where(['author_name'=>$authorName])
+  ->first();
+
+  if($authorExists){
+    $author_id = $authorExists->author_id;
+    $bookData =$this->request->getData();
+    $bookData['author_id'] = $author_id;
+    $book_record =$this->Book_records->patchEntity($book_record, $bookData);
+    debug($book_record);
+    $this->Book_records->save($book_record);
+    return $this->redirect(['action' => 'index']);
+  }
+
+// if author doesn't exist, create a new record then add the book
+  if (!$authorExists && $this->request->is('post')) {
     $author=$this->Authors->patchEntity($author, $this->request->getData());      
     debug($author);
     
     if($this->Authors->save($author))
     {
       $author->id = $author->get('author_id');
-      $author_id = $author->id;
+      $author_id = $author->author_id; 
       $bookData =$this->request->getData();
       $bookData['author_id'] = $author_id;
       $book_record =$this->Book_records->patchEntity($book_record, $bookData);
       debug($book_record);
       $this->Book_records->save($book_record);
+      return $this->redirect(['action' => 'index']);
     }
-
-
   }
 }
 }
