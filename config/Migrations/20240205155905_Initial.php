@@ -307,8 +307,6 @@ class Initial extends AbstractMigration
         $this->table('book_reviews')->drop()->save();
         $this->table('books_genres')->drop()->save();
         $this->table('genres')->drop()->save();
-        $this->table('panels')->drop()->save();
-        $this->table('requests')->drop()->save();
         $this->table('reviews')->drop()->save();
         $this->table('users')->drop()->save();
     }
