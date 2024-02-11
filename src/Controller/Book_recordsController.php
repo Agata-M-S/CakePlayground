@@ -69,4 +69,28 @@ public function update($title= null)
     }
 }
 }
+
+public function addBook(){
+  $book_record=$this->Book_records->newEntity();
+  $author=$this-> Authors -> newEntity();
+
+  
+  if ($this->request->is('post')) {
+    $author=$this->Authors->patchEntity($author, $this->request->getData());      
+    debug($author);
+    
+    if($this->Authors->save($author))
+    {
+      $author->id = $author->get('author_id');
+      $author_id = $author->id;
+      $bookData =$this->request->getData();
+      $bookData['author_id'] = $author_id;
+      $book_record =$this->Book_records->patchEntity($book_record, $bookData);
+      debug($book_record);
+      $this->Book_records->save($book_record);
+    }
+
+
+  }
+}
 }
