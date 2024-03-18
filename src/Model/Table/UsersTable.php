@@ -34,9 +34,9 @@ class UsersTable extends Table
         $this->setDisplayField('user_id');
         $this->setPrimaryKey('user_id');
         $this -> belongsToMany('Reviews', [
-          'through'=>'BookReviews',
-          'foreignKey'=>'user_id',
-          'targetForeignKey' => 'review_id' 
+            'through'=>'BookReviews',
+            'foreignKey'=>'user_id',
+            'targetForeignKey' => 'review_id'
         ]);
     }
 
@@ -67,6 +67,35 @@ class UsersTable extends Table
             ->date('user_date_created')
             ->allowEmptyDate('user_date_created');
 
+        $validator
+            ->scalar('password')
+            ->maxLength('password', 20)
+            ->notEmptyString('password');
+
+        $validator
+            ->scalar('username')
+            ->maxLength('username', 30)
+            ->notEmptyString('username');
+
+        $validator
+            ->email('email')
+            ->notEmptyString('email');
+
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->isUnique(['username']));
+        $rules->add($rules->isUnique(['email']));
+
+        return $rules;
     }
 }

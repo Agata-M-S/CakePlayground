@@ -27,7 +27,11 @@ use Cake\Event\Event;
  */
 class AppController extends Controller
 {
-
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        $this->Authentication->addUnauthenticatedActions(['index', 'view', 'author']);
+    }
     /**
      * Initialization hook method.
      *
@@ -45,7 +49,7 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
-
+        $this->loadComponent('Authentication.Authentication');
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3/en/controllers/components/security.html

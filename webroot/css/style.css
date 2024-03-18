@@ -1,118 +1,133 @@
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+.nav{
+  display: flex;
+  padding: 0.8em;
+  background-color: rgba(0, 0, 0, 0.285);
+  /* height: 40px; */
 }
 
 .table-div {
-  display: flex;
+    display: flex;
 }
 
 th:last-child,
 td:last-child {
-  width: 15%;
-  max-width: fit-content;
-  text-align: right;
+    width: 15%;
+    max-width: fit-content;
+    text-align: right;
 }
 
 th:nth-child(4),
 td:nth-child(4) {
-  width: 10%;
-  max-width: fit-content;
+    width: 10%;
+    max-width: fit-content;
 }
 
 ul,
 ul p {
-  padding: 0;
-  margin: 0;
-  text-align: justify;
+    padding: 0;
+    margin: 0;
+    text-align: justify;
 }
 
 .book-div {
-  display: grid;
-  margin: 2em;
-  grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: 0.3fr 0.3fr 0.1fr 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  padding: 0;
+    display: grid;
+    margin: 2em;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 0.3fr 0.3fr 0.1fr 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 0;
 }
 
 .book-div > h1 {
-  grid-area: 1 / 2 / 2 / 3;
+    grid-area: 1 / 2 / 2 / 3;
 }
 
 .book-div p {
-  margin: 0 !important;
-  text-align: justify;
+    margin: 0 !important;
+    text-align: justify;
 }
 
 .review-div {
-  background-color: #f5804533;
-  padding: 1em;
-  margin: 1.5em;
+    background-color: #f5804533;
+    padding: 1em;
+    margin: 1.5em;
 }
 .review-div li {
-  list-style: none;
-  text-align: left;
+    list-style: none;
+    text-align: left;
 }
 
 .img-div {
-display: flex;
-flex-wrap: wrap;
-align-content: space-around;
-  margin: 1em;
-  grid-area: 1 / 1 / 5 / 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    margin: 1em;
+    grid-area: 1 / 1 / 5 / 2;
 }
 
 img {
-  width: 100%;
+    width: 100%;
 }
 
 table {
-  background: #fff;
-  margin: 1.25rem 2em;
-  table-layout: fixed;
-  width: 100%;
-  align-self: center;
+    background: #fff;
+    margin: 1.25rem 2em;
+    table-layout: fixed;
+    width: 100%;
+    align-self: center;
 }
 
 td {
-  display: flex;
-  justify-content: center ;
+    display: flex;
+    justify-content: center;
 }
 
-.input-div{
-  margin: 1em;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.input-div {
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-textarea, input, select{
-  border: 1px solid rgba(113, 113, 159, 0.658) !important;
-  border-radius: 20px !important;
-  margin: 10px !important;
-  width: 50vw !important;
+textarea,
+input,
+select {
+    border: 1px solid rgba(113, 113, 159, 0.658) !important;
+    border-radius: 20px !important;
+    margin: 10px !important;
+    width: 50vw !important;
 }
 
 .button {
-  background-color:  rgba(113, 113, 159, 0.81);
-  border-radius: 20px;
-  padding: 10px 40px;
-  box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.555);
+    background-color: rgba(113, 113, 159, 0.81);
+    border-radius: 20px;
+    padding: 10px 40px;
+    box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.555);
 }
 
-.button:hover{
-  background-color: rgba(0, 0, 99, 0.666);
+.button:hover {
+    background-color: rgba(0, 0, 99, 0.666);
 }
 
-label{
-  color: rgb(3, 1, 33);
-  margin-top: 1em;
+label {
+    color: rgb(3, 1, 33);
+    margin-top: 1em;
+}
+
+.checkbox-div {
+    display: flex;
+    flex-direction: row;
+    width: 83vw;
+    align-items: center;
+    justify-content: space-around;
 }
 
 /* .disabled a,
@@ -943,7 +958,7 @@ pre {
     }
     
     /** Notices and Errors **/
-    /* .cake-error,
+/* .cake-error,
     .cake-debug,
     .notice,
     p.error,
@@ -957,7 +972,7 @@ pre {
         box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.24);
     }
      */
-    /* .cake-debug,
+/* .cake-debug,
     .notice,
     p.notice {
         color: #000000;
@@ -997,8 +1012,8 @@ pre {
         color: #fff;
         text-decoration: underline;
     } */
-     
-    /* .checks {
+
+/* .checks {
         padding: 30px;
         color: #626262;
         background-color: #b7e3ec;
@@ -1016,9 +1031,9 @@ pre {
         height: 0;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    } */ 
-    
-    /* .checks .success,
+    } */
+
+/* .checks .success,
     .checks .problem {
         margin-left: 10px;
     }
@@ -1318,4 +1333,3 @@ table td {
 }
 
   */
-
